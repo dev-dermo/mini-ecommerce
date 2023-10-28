@@ -1,0 +1,5 @@
+node_modules/
+.env
+cli/uploads/*.csv
+cli/uploads/*.txt
+db/seed.js
