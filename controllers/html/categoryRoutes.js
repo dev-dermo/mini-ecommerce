@@ -3,10 +3,15 @@ const { Product } = require('../../models');
 
 router.get('/:categoryId/products', async (req, res) => {
 	try {
-		const response = await Product.findAll({ where: { category_id: req.params.categoryId }, include: ['category'] });
+		const response = await Product.findAll({
+			where: {
+				category_id: req.params.categoryId
+			},
+			include: ['category']
+		});
 
 		if (!response) {
-			return res.status(404).end();
+			return res.redirect('/404');
 		}
 
 		const products = await response.map((product) => product.get({ plain: true }));
@@ -20,7 +25,7 @@ router.get('/:categoryId/products', async (req, res) => {
 
 router.get('/:categoryId/products/:productId', async (req, res) => {
 	try {
-		const response = await Product.findOne({
+		const response = await Product.findAll({
 			where: {
 				id: req.params.productId,
 				category_id: req.params.categoryId,
@@ -32,8 +37,8 @@ router.get('/:categoryId/products/:productId', async (req, res) => {
 			return res.redirect('/404');
 		}
 
-		const product = await response.get({ plain: true });
-		console.log(product);
+		const products = await response.map(product => product.get({ plain: true }));
+		console.log(products);
 		res.send('Check console.');
 	} catch (error) {
 		console.error(error);

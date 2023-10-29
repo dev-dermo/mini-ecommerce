@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
 			return res.redirect('/404');
 		}
 
-		const products = await response.map((product) => product.get({ plain: true }));
+		const products = await response.map(product => product.get({ plain: true }));
 		console.log(products);
 		res.send('Check console.');
 	} catch (error) {
@@ -20,14 +20,19 @@ router.get('/', async (req, res) => {
 
 router.get('/:productId', async (req, res) => {
 	try {
-		const response = await Product.findByPk(req.params.productId, { include: ['category'] });
+		const response = await Product.findAll({
+			where: {
+				id: req.params.productId,
+			},
+			include: ['category'],
+		});
 
 		if (!response) {
 			return res.redirect('/404');
 		}
 
-		const product = await response.get({ plain: true });
-		console.log(product);
+		const products = await response.map(product => product.get({ plain: true }));
+		console.log(products);
 		res.send('Check console.');
 	} catch (error) {
 		console.error(error);

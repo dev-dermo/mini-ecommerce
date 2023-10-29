@@ -17,7 +17,4 @@ router.get('/', async (req, res) => {
 	}
 });
 
-// handle any uncaught route and redirect to 404 page
-router.use('*', (req, res) => res.render('404'));
-
 module.exports = router;
