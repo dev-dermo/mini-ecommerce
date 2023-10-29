@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { Product } = require('../../models');
 const categoryRoutes = require('./categoryRoutes');
 const productRoutes = require('./productRoutes');
 const homeRoutes = require('./homeRoutes');
