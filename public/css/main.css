@@ -1,0 +1,102 @@
+:root {
+	--primary-pink: #feb4c4;
+	--medium-pink: #ffe2e8;
+	--light-pink: #fff3f5;
+	--dark-grey: #454545;
+	--light-grey: #9D9D9D;
+}
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	color: var(--dark-grey);
+}
+
+*::selection {
+	background-color: var(--primary-pink);
+	color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+}
+
+.bg-pink {
+	background-color: var(--primary-pink);
+}
+
+.bg-medium-pink {
+	background-color: var(--medium-pink);
+}
+
+.bg-light-pink {
+	background-color: var(--light-pink);
+}
+
+.text-pink {
+	color: var(--primary-pink);
+}
+
+.text-dark-grey {
+	color: var(--dark-grey) !important;
+	text-decoration: none;
+}
+
+.text-dark-grey:hover {
+	text-decoration: underline;
+}
+
+.text-light-grey {
+	color: var(--light-grey);
+}
+
+.btn {
+	border-radius: 0;
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 2px;
+}
+
+.btn-pink.btn:first-child:active,
+a.btn-pink.btn:first-child:active {
+	background-color: var(--light-grey);
+	border-color: var(--light-grey);
+}
+
+.btn-pink {
+	background-color: var(--primary-pink);
+	color: white !important;
+	border-color: var(--primary-pink);
+}
+
+.btn-pink:hover {
+	background-color: var(--light-grey);
+	border-color: var(--light-grey);
+}
+
+a:link,
+a:visited,
+a:active {
+	color: var(--primary-pink);
+	letter-spacing: 2px;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+footer p {
+	margin-bottom: 7px;
+}
+
+footer p:hover small {
+	cursor: pointer;
+	color: var(--primary-pink);
+	transition: all 0.3s ease-in-out;
+}

@@ -1,39 +1,46 @@
 {{> hero}}
 
-<div class="row text-center">
-	<h2>Our latest and greatest</h2>
-</div>
-
-<div class="row">
-	<div class="col d-flex justify-content-center">
-		<h3 class="active">
-			New Arrivals
-		</h3>
-		
-		<h3>
-			Best Sellers
-		</h3>
+<div class="container-fluid">
+	<div class="row text-center text-uppercase text-light-grey my-4">
+		<h2 class="fs-5 mt-2">Our latest and greatest</h2>
 	</div>
-</div>
 
-<div class="row d-flex justify-content-center">
-	<div class="col-5 text-center">
-		<p>Stay ahead of the rest, get the new and now. Shop our newest arrivals.</p>
-	</div>
-</div>
+	<div class="row">
+		<div id="controls" class="col d-flex justify-content-center text-uppercase text-pink mb-4">
+			<h3 id="new-arrivals-control" class="text-decoration-underline mx-4 pointer">
+				New Arrivals
+			</h3>
 
-<div id="new-arrivals" class="row">
-	{{#each newArrivals}}
-		<div class="col-md-3 col-sm-6">
-		test
+			<h3 id="best-sellers-control" class="mx-4 pointer">
+				Best Sellers
+			</h3>
 		</div>
-	{{/each}}
+	</div>
+
+	<div class="row d-flex justify-content-center">
+		<div class="col-5 text-center">
+			<p>Stay ahead of the rest, get the new and now. Shop our newest arrivals.</p>
+		</div>
+	</div>
+
+	<div id="new-arrivals" class="row gx-4 my-5 animate__animated animate__slideInLeft">
+		{{#each newArrivals}}
+			{{> product}}
+		{{/each}}
+	</div>
+
+	<div id="best-sellers" class="row gx-4 my-5 visually-hidden">
+		{{#each bestSellers}}
+			{{> product}}
+		{{/each}}
+	</div>
+
+	<div class="row text-center">
+		<div class="col">
+			<a class="btn btn-pink" href="#">More best sellers</a>
+		</div>
+	</div>
 </div>
 
-<div id="best-sellers" class="row visually-hidden">
-	{{#each bestSellers}}
-	<div class="col-md-3 col-sm-6">
-		test
-	</div>
-	{{/each}}
-</div>
+
+<script src="./js/toggleNewAndBest.js"></script>

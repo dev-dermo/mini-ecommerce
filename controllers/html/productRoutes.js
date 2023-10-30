@@ -33,7 +33,11 @@ router.get('/:productId', async (req, res) => {
 
 		const products = await response.map(product => product.get({ plain: true }));
 		console.log(products);
-		res.send('Check console.');
+		// res.send('Check console.');
+		res.render('product', {
+			product: products[0],
+			title: products[0].product_name,
+		});
 	} catch (error) {
 		console.error(error);
 		res.status(500).end();

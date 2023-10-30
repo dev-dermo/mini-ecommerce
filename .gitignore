@@ -4,3 +4,4 @@ cli/uploads/*.csv
 cli/uploads/*.txt
 db/seed.js
 .DS_Store
+example_work/

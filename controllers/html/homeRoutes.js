@@ -7,9 +7,10 @@ router.get('/', async (req, res) => {
 		const response = await Product.findAll();
 		const products = await response.map((product) => product.get({ plain: true }));
 		res.render('home', {
-			title: 'Home Page',
+			title: 'Mini E-commerce | Homepage',
 			newArrivals: products.slice(0, 4),
 			bestSellers: products.slice(4, 8),
+			mostViral: products.slice(8, 12),
 		});
 	} catch (error) {
 		console.error(error);
